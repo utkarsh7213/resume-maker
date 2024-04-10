@@ -59,7 +59,7 @@ const LoginPage = () => {
       <div className="flex flex-col justify-center items-center h-[calc(100vh-100px)]">
         <div className="flex flex-col space-y-1 w-[20rem] md:w-[22rem]">
           <h1 className="text-4xl text-black font-semibold">Login</h1>
-          <p className="text-gray-500">Please login into your account to view courses.</p>
+          <p className="text-gray-500">Please login into your account create resume.</p>
         </div>
         <div className="">
           <form className="my-6 md:my-8 space-y-3" onSubmit={handleLogin}>

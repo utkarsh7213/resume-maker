@@ -1,8 +1,31 @@
 import Header from '@/components/Header'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 function index() {
+  const templates = [
+    {
+      id: 1,
+      title: 'Resume Template 1',
+      imageSrc: 'https://placehold.co/250x250@2x.png',
+      link: '/template/1',
+    },
+    {
+      id: 2,
+      title: 'Resume Template 2',
+      imageSrc: 'https://placehold.co/300x300@2x.png',
+      link: '/template/2',
+    },
+    {
+      id: 3,
+      title: 'Resume Template 3',
+      imageSrc: 'https://placehold.co/300x300@2x.png',
+      link: '/template/3',
+    },
+    // Add more templates as needed
+  ];
+  
   return (
     <div className='min-h-screen bg-gray-50'>
         <div className="">
@@ -14,57 +37,21 @@ function index() {
 </div>
 
 <div className="flex flex-wrap justify-center gap-8">
-  {/* Resume Card 1 */}
-  <div className="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] h-[400px]">
-    <div className="px-6 py-4">
-      <div className="font-bold text-xl mb-2 text-black">Resume Template 1</div>
-      <p className="text-gray-700 text-base">Description of Resume Template 1...</p>
-    </div>
-    <div className="px-6 pt-4 pb-2">
-      <Link href={'/template/1'} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        View Details
-      </Link>
-    </div>
-  </div>
-
-  {/* Resume Card 2 */}
-  <div className="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] h-[400px]">
-    <div className="px-6 py-4">
-      <div className="font-bold text-xl mb-2 text-black">Resume Template 2</div>
-      <p className="text-gray-700 text-base">Description of Resume Template 1...</p>
-    </div>
-    <div className="px-6 pt-4 pb-2">
-    <Link href={'/template/2'} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        View Details
-      </Link>
-    </div>
-  </div>
-
-  {/* Resume Card 3 */}
-  <div className="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] h-[400px]">
-    <div className="px-6 py-4">
-      <div className="font-bold text-xl mb-2 text-black">Resume Template 3</div>
-      <p className="text-gray-700 text-base">Description of Resume Template 1...</p>
-    </div>
-    <div className="px-6 pt-4 pb-2">
-    <Link href={'/template/3'} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        View Details
-      </Link>
-    </div>
-  </div>
-
-  {/* Resume Card 4 */}
-  <div className="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] h-[400px]">
-    <div className="px-6 py-4">
-      <div className="font-bold text-xl mb-2 text-black">Resume Template 4</div>
-      <p className="text-gray-700 text-base">Description of Resume Template 1...</p>
-    </div>
-    <div className="px-6 pt-4 pb-2">
-    <Link href={'/template/4'} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        View Details
-      </Link>
-    </div>
-  </div>
+{templates.map((template) => (
+        <div key={template.id} className="bg-white shadow-lg rounded-xl overflow-hidden w-[300px] h-[450px] m-4">
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2 text-black text-center">{template.title}</div>
+          </div>
+          <div className="">
+            <Image width={300} height={300} src={template.imageSrc} alt={`Template ${template.id}`} quality={100} />
+          </div>
+          <div className="flex justify-center py-4">
+            <Link href={template.link} className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-2xl">
+              Select Template
+            </Link>
+          </div>
+        </div>
+      ))}
 </div>
 
     </div>

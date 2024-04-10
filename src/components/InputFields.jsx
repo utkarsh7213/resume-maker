@@ -57,7 +57,7 @@ const renderAdditionalFields = (fieldType) => {
                   placeholder="Skill"
                   value={skill}
                   onChange={(e) => handleFieldChange(fieldType, index, null, e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded-md mr-2"
+                  className="w-full p-2 border border-gray-300 rounded-md mr-2 outline-none focus-within:ring"
                 />
                 <button onClick={() => handleRemoveField(fieldType, index)} className="px-3 py-1 bg-red-500 text-white rounded-md ml-2">
                   Remove
@@ -75,13 +75,13 @@ const renderAdditionalFields = (fieldType) => {
                     placeholder={`${fieldType.charAt(0).toUpperCase() + fieldType.slice(1)} Title`}
                     value={field.title}
                     onChange={(e) => handleFieldChange(fieldType, index, 'title', e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded-md mr-2"
+                    className="w-full p-2 border border-gray-300 rounded-md mr-2 outline-none focus-within:ring"
                 />
                 <textarea
                     placeholder={`${fieldType.charAt(0).toUpperCase() + fieldType.slice(1)} Description`}
                     value={field.description}
                     onChange={(e) => handleFieldChange(fieldType, index, 'description', e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded-md"
+                    className="w-full p-2 border border-gray-300 rounded-md outline-none focus-within:ring"
                 />
                 <button onClick={() => handleRemoveField(fieldType, index)} className="px-3 py-1 bg-red-500 text-white rounded-md ml-2">
                     Remove
@@ -104,12 +104,12 @@ const renderAdditionalFields = (fieldType) => {
 
     return (
         <div className="w-full flex flex-col text-black">
-            <input type="text" id="fullName" placeholder="Full Name" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md" />
-            <input type="text" id="jobTitle" placeholder="Job Title" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md" />
-            <textarea id="summary" placeholder="Summary" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md"></textarea>
-            <input type="text" id="phoneNumber" placeholder="Phone Number" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md" />
-            <input type="text" id="email" placeholder="E-mail" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md" />
-            <input type="text" id="address" placeholder="Address" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md" />
+            <input type="text" id="fullName" placeholder="Full Name" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
+            <input type="text" id="jobTitle" placeholder="Job Title" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
+            <textarea id="summary" placeholder="Summary" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring"></textarea>
+            <input type="text" id="phoneNumber" placeholder="Phone Number" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
+            <input type="text" id="email" placeholder="E-mail" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
+            <input type="text" id="address" placeholder="Address" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
              {/* Render additional fields for Skills */}
             {renderAdditionalFields('skills')}
              

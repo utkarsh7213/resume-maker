@@ -1,6 +1,8 @@
 import Header from '@/components/Header';
 import InputFields from '@/components/InputFields';
 import ResumePreview from '@/components/ResumePreview';
+import Template2 from '@/components/Template2';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
 import ReactToPrint from 'react-to-print';
@@ -43,10 +45,11 @@ const IndexPage = () => {
                 </div>
                     {/* <ResumePreview ref={componentRef} data={resumeData} /> */}
   {id === '1' && <ResumePreview ref={componentRef} data={resumeData} />}
-  {id === '2' && <ResumePreview ref={componentRef} data={resumeData} />}
+  {id === '2' && <Template2 ref={componentRef} data={resumeData} />}
             </div>
-            <div className="bg-gray-100 py-10">
-            <button className='p-3 bg-teal-400 rounded-xl' onClick={handlePrint}>Print Resume</button>
+            <div className="bg-gray-100 py-10 flex justify-center space-x-5">
+            <button className='p-3 bg-teal-500 hover:bg-teal-700 transition rounded-xl' onClick={handlePrint}>Print Resume</button>
+            <Link href={'/'} className='p-3 bg-teal-500 hover:bg-teal-700 transition rounded-xl'>Select another template</Link>
             </div>
         </>
     );
