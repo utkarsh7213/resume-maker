@@ -1,4 +1,5 @@
 // components/ResumePreview.js
+import Image from "next/image";
 import React from "react";
 
 const ResumePreview = React.forwardRef(({ data }, ref) => {
@@ -14,7 +15,8 @@ const ResumePreview = React.forwardRef(({ data }, ref) => {
     projects,
     achievements,
     email,
-    address
+    address,
+    image
  } = data;
  return (
   <div  className="w-full" id="resume">
@@ -23,9 +25,15 @@ const ResumePreview = React.forwardRef(({ data }, ref) => {
      
   <div ref={ref} className="p-5 px-16 bg-white  rounded-md">
     <div  className="">
+      <div className="flex justify-between">
+
       <div className="flex flex-col space-y-3">
         <h1 className="text-5xl text-blue-600 font-bold">{fullName}</h1>
         <p className="text-gray-500 text-xl">{jobTitle}</p>
+      </div>
+      <div className="rounded-full size-[120px] bg-black flex justify-center items-center">
+        <Image quality={100} className="rounded-full " width={120} height={120} src= { image ||'/img_avatar.png'} />
+      </div>
       </div>
 
       <div className="mt-5">

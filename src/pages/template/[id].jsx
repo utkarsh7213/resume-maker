@@ -13,9 +13,9 @@ const IndexPage = () => {
     const { id } = router.query;
 
     const [resumeData, setResumeData] = useState({
-        fullName: '',
-        jobTitle: '',
-        summary: '',
+        fullName: 'Your name here',
+        jobTitle: 'Job title here',
+        summary: 'summary here',
         experience: [],
         education: [],
         skills: [],

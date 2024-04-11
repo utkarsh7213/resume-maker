@@ -1,4 +1,5 @@
 // components/ResumePreview.js
+import Image from "next/image";
 import React from "react";
 
 const Template2 = React.forwardRef(({ data }, ref) => {
@@ -14,53 +15,33 @@ const Template2 = React.forwardRef(({ data }, ref) => {
     projects,
     achievements,
     email,
-    address
+    address,
+    image
  } = data;
  return (
   <div  className="w-full" id="resume">
      
         
      
-  <div ref={ref} className="p-5 px-16 bg-white  rounded-md">
+  <div ref={ref} className="p-5 px-16 bg-white min-h-screen max-h-full  rounded-md">
     <div  className="">
-      <div className="flex flex-col space-y-3">
-        <h1 className="text-5xl text-blue-600 font-bold">{fullName}</h1>
-        <p className="text-gray-500 text-xl">{jobTitle}</p>
-      </div>
+      <div className="flex justify-between">
 
-      <div className="mt-5">
-        <div className="bg-[#4747f4] w-full h-[40px] rounded-md flex justify-center items-center">
-          <h1 className="text-2xl text-white font-semibold">summary</h1>
-        </div>
-        <div className="flex  my-4 space-x-4 justify-center text-black">
-      <p className="w-[800px] break-all">
-        
-        {summary}
-        </p>
-        </div>
+      <div className="flex flex-col space-y-3">
+        <h1 className="text-5xl text-blue-600 font-bold">{fullName || 'Your name here'}</h1>
+        <p className="text-gray-500 text-xl">{jobTitle || 'Job title here'}</p>
+        <p className="text-gray-500 text-sm break-all w-[400px]"> {summary || 'Summary here'}</p>
+
       </div>
-      <div className="mt-5">
-        <div className="bg-[#4747f4] w-full h-[40px] rounded-md flex justify-center items-center">
-          <h1 className="text-2xl text-white font-semibold">Skills</h1>
-        </div>
-        <div className="flex my-4 space-x-4 justify-center">
-        {skills.length === 0 ? (
-<div className="text-gray-600">Enter some skills</div>
-) : (
-skills.map((skill, index) => (
-    <div
-        key={index}
-        className="p-2 bg-gray-400 font-medium rounded-xl"
-    >
-        {skill}
-    </div>
-))
-)}
-        </div>
+      <div className="rounded-full size-[120px] bg-black flex justify-center items-center">
+        <Image quality={100} className="rounded-full " width={120} height={120} src= { image ||'/img_avatar.png'} />
       </div>
-      <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
-      <div className="flex flex-col space-y-4 mt-3">
-        <div className="">
+      </div>
+      <div className="bg-black w-full h-[1px] my-5"></div>
+
+      <div className="flex">
+<div className="w-[380px]  border-r border-r-black mr-5 ">
+<div className="my-3">
           <div className="">
             <h1 className="text-2xl text-black font-bold">
               Contact Information
@@ -69,16 +50,41 @@ skills.map((skill, index) => (
           <div className="text-gray-600">
             <p className="">Phone number: {phoneNumber}</p>
             <p className="">E-mail: {email}</p>
+            <p className="w-[200px] break-all">Address: {address}</p>
           </div>
         </div>
-        <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
           <div className="">
-            <h1 className="text-2xl text-black font-bold">Address</h1>
+            <h1 className="text-2xl text-black font-bold">
+              Skills
+            </h1>
           </div>
-          <div className="text-gray-600">{address}</div>
+          <div className="flex flex-col my-4 space-y-2 ">
+        {skills.length === 0  ? (
+<div className="text-gray-600">Enter some skills</div>
+) : (
+skills.map((skill, index) => (
+    <div
+        key={index}
+        className=" flex flex-col items-start font-medium rounded-xl"
+    >
+      <p className="bg-gray-100 text-gray-600 p-1 rounded-sm">
+
+        {skill}
+      </p>
+    </div>
+))
+)}
         </div>
-        <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
+        </div>
+
+</div>
+
+<div className="w-full">
+
+      <div className="flex flex-col space-y-4 mt-3">
+       
+      
         <div className="">
           <div className="">
             <h1 className="text-2xl text-black font-bold">
@@ -156,11 +162,15 @@ skills.map((skill, index) => (
             </ul>
           </div>
         </div>
-        <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
+       
       </div>
+</div>
+      </div>
+     
+      
     </div>
   </div>
-  {/* <button className="p-3 rounded-md bg-gray-500 my-3 mx-4" onClick={handlePrint}>Download PDF</button> */}
+  
 
 </div>
  );

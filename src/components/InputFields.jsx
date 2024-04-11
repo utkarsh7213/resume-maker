@@ -45,6 +45,20 @@ useEffect(() => {
         ...additionalFields
     }));
 }, [additionalFields, setResumeData]);
+const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+       const reader = new FileReader();
+       reader.onloadend = () => {
+         setAdditionalFields(prevFields => ({
+           ...prevFields,
+           image: reader.result
+         }));
+       };
+       reader.readAsDataURL(file);
+    }
+   };
+   
 
 const renderAdditionalFields = (fieldType) => {
     if (fieldType === 'skills') {
@@ -86,8 +100,7 @@ const renderAdditionalFields = (fieldType) => {
                 <button onClick={() => handleRemoveField(fieldType, index)} className="px-3 py-1 bg-red-500 text-white rounded-md ml-2">
                     Remove
                 </button>
-            </div>
-        ));
+            </div>        ));
     }
 };
 
@@ -104,10 +117,17 @@ const renderAdditionalFields = (fieldType) => {
 
     return (
         <div className="w-full flex flex-col text-black">
+            <input
+ type="file"
+ accept="image/*"
+ onChange={handleImageUpload}
+ className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring"
+/>
+
             <input type="text" id="fullName" placeholder="Full Name" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
             <input type="text" id="jobTitle" placeholder="Job Title" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
             <textarea id="summary" placeholder="Summary" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring"></textarea>
-            <input type="text" id="phoneNumber" placeholder="Phone Number" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
+            <input type="text" id="phoneNumber" maxLength={10} placeholder="Phone Number" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
             <input type="text" id="email" placeholder="E-mail" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
             <input type="text" id="address" placeholder="Address" onChange={handleChange} className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring" />
              {/* Render additional fields for Skills */}
