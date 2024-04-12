@@ -6,7 +6,7 @@ import User from '@/models/user';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { username, email, password } = req.body;
+    const { username, email,phoneNumber, password } = req.body;
 
     await dbConnect();
 
@@ -21,6 +21,10 @@ export default async function handler(req, res) {
       const existingEmail = await User.findOne({ email });
       if (existingEmail) {
         return res.status(400).json({ error: 'Email already exists', field: 'email' });
+      }
+      const existingPhone = await User.findOne({ phoneNumber });
+      if (existingPhone) {
+        return res.status(400).json({ error: 'Phone already exists', field: 'phone' });
       }
 
       // Check if the username is at least 3 characters long
@@ -40,6 +44,7 @@ export default async function handler(req, res) {
       const user = await User.create({
         username,
         email,
+        phoneNumber,
         password: hashedPassword,
       });
 

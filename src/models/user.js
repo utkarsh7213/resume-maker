@@ -1,4 +1,3 @@
-// models/user.js
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
@@ -13,6 +12,10 @@ const userSchema = new mongoose.Schema({
     unique: true,
   },
   password: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
     type: String,
     required: true,
   },
@@ -33,6 +36,10 @@ const userSchema = new mongoose.Schema({
     expiresAt: {
       type: Date,
     },
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 

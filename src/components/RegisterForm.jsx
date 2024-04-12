@@ -11,16 +11,18 @@ const RegisterForm = ({ onRegister }) => {
     username: "",
     email: "",
     password: "",
+    phoneNumber: "", 
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true)
     // Validate form fields
     if (formData.username.trim() === "") {
       toast.error("Please enter a username");
@@ -45,11 +47,12 @@ const RegisterForm = ({ onRegister }) => {
     // Call the onRegister function passed from the parent component
 
     await onRegister(formData);
+    setLoading(false)
   };
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="flex flex-col justify-center items-center h-[calc(100vh-100px)]">
+      <div className="flex flex-col justify-center items-center h-[100vh]">
         <div className="flex flex-col space-y-1 w-[20rem] md:w-[22rem]">
           <h1 className="text-4xl text-black font-semibold">Register</h1>
           <p className="text-gray-500">Join our Resume Maker Community.</p>
@@ -73,6 +76,24 @@ const RegisterForm = ({ onRegister }) => {
                 type="text"
               />
             </div>
+            <div className="flex flex-col space-y-2">
+  <label
+    className="text-lg text-black/70 font-[400]"
+    htmlFor="phoneNumber"
+  >
+    Phone Number
+  </label>
+  <input
+    value={formData.phoneNumber}
+    onChange={handleChange}
+    name="phoneNumber"
+    placeholder="Enter your phone number"
+    id="phoneNumber"
+    className="rounded-2xl border-2 border-gray-300 bg-transparent text-black outline-none p-3 w-[20rem] md:w-[22rem] focus-within:border-blue-500 focus-within:border-2"
+    type="text"
+    required
+  />
+</div>
             <div className="flex flex-col space-y-2">
               <label
                 className="text-lg text-black/70 font-[400]"

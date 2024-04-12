@@ -20,7 +20,7 @@ function index() {
     {
       id: 3,
       title: 'Resume Template 3',
-      imageSrc: 'https://placehold.co/300x300@2x.png',
+      imageSrc: '/3.png',
       link: '/template/3',
     },
     // Add more templates as needed
@@ -32,8 +32,14 @@ function index() {
             <Header/>
         </div>
 
-<div className="my-6">
+<div className="my-3">
     <h1 className="text-center text-black text-4xl font-semibold">Welcome to Resume Maker!</h1>
+    <p className="text-gray-600 font-medium py-1 text-center">Developed by
+Utkarsh   and Parvesh,
+</p>
+    <p className="text-gray-600 font-medium text-center">Students of Department of Computer Science and Applications
+A.S.College, Khanna
+</p>
 </div>
 
 <div className="flex flex-wrap justify-center gap-4">

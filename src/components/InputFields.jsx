@@ -117,9 +117,11 @@ const renderAdditionalFields = (fieldType) => {
 
     return (
         <div className="w-full flex flex-col text-black">
+            <label className='mb-3' htmlFor="profilePic">Profile Photo:</label>
             <input
  type="file"
  accept="image/*"
+ id='profilePic'
  onChange={handleImageUpload}
  className="w-full mb-4 p-2 border border-gray-300 rounded-md outline-none focus-within:ring"
 />

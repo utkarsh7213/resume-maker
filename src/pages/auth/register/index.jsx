@@ -30,6 +30,8 @@ const RegisterPage = () => {
           toast.error('Username already exists!');
         } else if (data.field === 'email') {
           toast.error('Email already exists!');
+        }else if (data.field === 'phone') {
+          toast.error('Phone number already exists!');
         } else {
           toast.error('Registration failed. Please try again.');
         }

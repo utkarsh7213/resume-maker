@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 
-const ResumePreview = React.forwardRef(({ data }, ref) => {
+const Template3 = React.forwardRef(({ data }, ref) => {
  
  const {
     fullName,
@@ -28,7 +28,7 @@ const ResumePreview = React.forwardRef(({ data }, ref) => {
       <div className="flex justify-between">
 
       <div className="flex flex-col space-y-3">
-        <h1 className="text-2xl md:text-5xl text-blue-600 font-bold break-all">{fullName}</h1>
+        <h1 className="text-2xl sm:text-5xl text-blue-600 font-bold break-all">{fullName}</h1>
         <p className="text-gray-500 text-xl break-all">{jobTitle}</p>
       </div>
       <div className="rounded-full min-w-[120px] size-[120px] bg-black flex justify-center items-center">
@@ -37,7 +37,7 @@ const ResumePreview = React.forwardRef(({ data }, ref) => {
       </div>
 
       <div className="mt-5">
-        <div className="bg-[#2C2C54] w-full h-[40px] rounded-md flex justify-center items-center">
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center">
           <h1 className="text-2xl text-white font-semibold">summary</h1>
         </div>
         <div className="flex  my-4 space-x-4 justify-center text-black">
@@ -48,7 +48,7 @@ const ResumePreview = React.forwardRef(({ data }, ref) => {
         </div>
       </div>
       <div className="mt-5">
-        <div className="bg-[#2C2C54] w-full h-[40px] rounded-md flex justify-center items-center">
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center">
           <h1 className="text-2xl text-white font-semibold">Skills</h1>
         </div>
         <div className="flex my-4 space-x-4 justify-center">
@@ -70,9 +70,9 @@ skills.map((skill, index) => (
       <div className="flex flex-col space-y-4 mt-3">
         <div className="">
           <div className="">
-            <h1 className="text-2xl text-black font-bold">
-              Contact Information
-            </h1>
+            <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center my-3">
+          <h1 className="text-2xl text-white font-semibold">Contact Information</h1>
+        </div>
           </div>
           <div className="text-gray-600">
             <p className="">Phone number: {phoneNumber}</p>
@@ -81,18 +81,16 @@ skills.map((skill, index) => (
         </div>
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
-          <div className="">
-            <h1 className="text-2xl text-black font-bold">Address</h1>
-          </div>
-          <div className="text-gray-600">{address}</div>
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center my-3">
+          <h1 className="text-2xl text-white font-semibold">Address</h1>
+        </div>
+          <div className="text-gray-600">{address || 'Enter shown here'}</div>
         </div>
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
-          <div className="">
-            <h1 className="text-2xl text-black font-bold">
-              Work Experience
-            </h1>
-          </div>
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center my-3">
+          <h1 className="text-2xl text-white font-semibold">Work Experience</h1>
+        </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
               {experience &&
@@ -109,9 +107,9 @@ skills.map((skill, index) => (
         </div>
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
-          <div className="">
-            <h1 className="text-2xl text-black font-bold">Education</h1>
-          </div>
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center my-3">
+          <h1 className="text-2xl text-white font-semibold">Education</h1>
+        </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
               {education &&
@@ -128,9 +126,9 @@ skills.map((skill, index) => (
         </div>
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
-          <div className="">
-            <h1 className="text-2xl text-black font-bold">Projects</h1>
-          </div>
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center my-3">
+          <h1 className="text-2xl text-white font-semibold">Projects</h1>
+        </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
               {projects &&
@@ -147,9 +145,9 @@ skills.map((skill, index) => (
         </div>
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
-          <div className="">
-            <h1 className="text-2xl text-black font-bold">Achievements</h1>
-          </div>
+        <div className="bg-[#1b5b47] w-full h-[40px] rounded-md flex justify-center items-center my-3">
+          <h1 className="text-2xl text-white font-semibold">Achievements</h1>
+        </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
               {achievements &&
@@ -174,4 +172,4 @@ skills.map((skill, index) => (
  );
 });
 
-export default ResumePreview;
+export default Template3;
