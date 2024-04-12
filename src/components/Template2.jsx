@@ -25,7 +25,7 @@ const Template2 = React.forwardRef(({ data }, ref) => {
      
   <div ref={ref} className="p-3 md:p-5 lg:px-16 bg-white min-h-screen max-h-full  rounded-md">
     <div  className="">
-      <div className="flex flex-row md:justify-between">
+      <div className="flex flex-row sm:justify-between">
       <div className="flex flex-col space-y-3">
         <h1 className="text-3xl md:text-5xl break-all text-blue-600 font-bold">{fullName || 'Your name here'}</h1>
         <p className="text-gray-500 text-xl break-all">{jobTitle || 'Job title here'}</p>
@@ -38,10 +38,10 @@ const Template2 = React.forwardRef(({ data }, ref) => {
       <div className="bg-black w-full h-[1px] my-5"></div>
 
       <div className="flex">
-<div className="w-[140px] lg:w-[380px]  border-r border-r-black mr-5 ">
-<div className="my-3">
+<div className="w-[140px] sm:w-[380px]  border-r border-r-black mr-5 ">
+<div className="my-3 sm:my-3">
           <div className="">
-            <h1 className="md:text-2xl text-black font-bold">
+            <h1 className="sm:text-2xl text-black font-bold">
               Contact Information
             </h1>
           </div>
@@ -53,7 +53,7 @@ const Template2 = React.forwardRef(({ data }, ref) => {
         </div>
         <div className="">
           <div className="">
-            <h1 className="md:text-2xl text-black font-bold">
+            <h1 className="sm:text-2xl text-black font-bold">
               Skills
             </h1>
           </div>
@@ -85,7 +85,7 @@ skills.map((skill, index) => (
       
         <div className="">
           <div className="">
-            <h1 className="md:text-2xl text-black font-bold">
+            <h1 className="sm:text-2xl text-black font-bold">
               Work Experience
             </h1>
           </div>
@@ -106,7 +106,7 @@ skills.map((skill, index) => (
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
           <div className="">
-            <h1 className="md:text-2xl text-black font-bold">Education</h1>
+            <h1 className="sm:text-2xl text-black font-bold">Education</h1>
           </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
@@ -125,7 +125,7 @@ skills.map((skill, index) => (
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
           <div className="">
-            <h1 className="md:text-2xl text-black font-bold">Projects</h1>
+            <h1 className="sm:text-2xl text-black font-bold">Projects</h1>
           </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
@@ -144,7 +144,7 @@ skills.map((skill, index) => (
         <div className="h-[2px] w-full bg-gray-300 rounded-full"></div>
         <div className="">
           <div className="">
-            <h1 className="md:text-2xl text-black font-bold">Achievements</h1>
+            <h1 className="sm:text-2xl text-black font-bold">Achievements</h1>
           </div>
           <div className="text-gray-600">
             <ul className="list-disc px-5">
