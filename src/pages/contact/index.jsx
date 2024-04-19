@@ -9,6 +9,10 @@ function MyApp() {
         <div className="bg-gradient-to-b from-purple-600 to-indigo-700 h-96 w-full">
            <Header/>
            <div className="">
+            <div className="flex my-2 justify-center space-x-2" >
+                <p className="text-white text-xl">Contact us on:</p>
+                <a href="mailto:wecoders26@gmail.com" className="text-white text-xl font-semibold hover:underline">wecoders26@gmail.com</a>
+            </div>
             <div className="w-full flex items-center justify-center my-24 py-10  absolute top-10 ">
                 <div className=" bg-white shadow rounded py-12 lg:px-28 px-8">
                     <p className="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700">Contact US</p>
